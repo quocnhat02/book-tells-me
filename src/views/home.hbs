@@ -1,0 +1,188 @@
+<!-- Main content -->
+<!-- Welcome -->
+<div class="container-fluid p-2">
+  <div class="row text-center border-2 p-2 m-2">
+    <div class="col-12">
+      <h2>
+        <span style="color: #00e1ff">W</span>
+        <span style="color: #ffa600">e</span>
+        <span style="color: #00ff1e">l</span>
+        <span style="color: #ea00ff">c</span>
+        <span style="color: #0008ff">o</span>
+        <span style="color: #e3ed2a">m</span>
+        <span style="color: #ff006f">e</span>
+        &nbsp;
+        <span style="color: #33ff00">t</span>
+        <span style="color: #0004ff">o</span>
+        &nbsp;
+        <span style="color: #00ffbf">B</span>
+        <span style="color: #00d0ff">o</span>
+        <span style="color: #ff0000">o</span>
+        <span style="color: #ff00cc">k</span>
+        <span style="color: #00bbff">-</span>
+        <span style="color: #44ff00">t</span>
+        <span style="color: #ff008c">e</span>
+        <span style="color: #00b3ff">l</span>
+        <span style="color: #ff7b00">l</span>
+        <span style="color: #3300ff">s</span>
+        <span style="color: #c300ff">-</span>
+        <span style="color: #00ff1e">m</span>
+        <span style="color: #00eeff">e</span>
+      </h2>
+    </div>
+    <div class="col-md-6 col-xs-12 d-flex flex-column justify-content-center">
+      <h3 style="color: orange">Book</h3>
+      <h1 style="color: green">Here for what you need</h1>
+      <p style="color: brown">
+        Here is a collection of things that you don't know in your whole life,
+        if you know, please share it with the community.
+      </p>
+    </div>
+    <div class="col-md-6 col-xs-12">
+      <img
+        src="./image/reading-book.webp"
+        class="img-fluid"
+        alt="reading-book"
+      />
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid p-2">
+  <div class="row text-center border-3 p-2 m-2">
+    <div class="col-12">
+      <h2 style="color: rgb(17, 231, 120)">Why is Book-Tells-me</h2>
+    </div>
+    <div class="col-md-6 col-xs-12">
+      <img
+        src="./image/reading-all-book.webp"
+        class="img-fluid"
+        alt="reading-book"
+      />
+    </div>
+    <div class="col-md-6 col-xs-12 d-flex flex-column justify-content-center">
+      <h1 style="color: rgb(60, 0, 128)">It's Free</h1>
+      <p style="color: rgb(243, 119, 37)">
+        Nobody doesn't want free stuff because it makes for a huge community
+        that's easy to connect with
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- Generics -->
+<div class="container-fluid p-2">
+  <div class="row text-center d-flex flex-row justify-content-center">
+    <div class="col-12">
+      <hr />
+      <h2>Generics</h2>
+    </div>
+
+    <!--  -->
+    <a href="#" style="text-decoration: none">
+      <div class="card card-generics m-2" style="width: 18rem">
+        <div class="card-body">
+          <img src="./image/tieu-thuyet.jpg" />
+          <h5 class="card-title">Tiểu thuyết</h5>
+          <div class="focus-content">
+            <p style="font-size: 12px" class="card-text">
+              Tiểu thuyết là một thể loại văn xuôi có hư cấu, thông qua nhân
+              vật, hoàn cảnh, sự việc để phản ánh bức tranh xã hội rộng lớn và
+              những vấn đề của cuộc sống con người<br />
+            </p>
+          </div>
+        </div>
+      </div>
+    </a>
+
+    {{#each books}}
+      <a href="#" style="text-decoration: none">
+        <div class="card card-generics m-2" style="width: 18rem">
+          <div class="card-body">
+            <img src="{{this.image}}" alt="{{this.nameBook}}" />
+            <h5 class="card-title">{{this.nameBook}}</h5>
+            <div class="focus-content">
+              <p style="font-size: 12px" class="card-text">
+                {{this.description}}
+              </p>
+            </div>
+          </div>
+        </div>
+      </a>
+    {{/each}}
+  </div>
+</div>
+
+<!-- Author -->
+<div class="container-fluid p-2">
+  <div class="row text-center d-flex flex-row justify-content-center">
+    <div class="col-12">
+      <hr />
+      <h2>Author</h2>
+    </div>
+
+    <!--  -->
+    <div class="card p-2" style="width: 14rem">
+      <img
+        class="card-img-top"
+        src="./image/anh-test.png"
+        alt="Card image cap"
+      />
+      <div class="card-body">
+        <h5 class="card-title">Tên tác giả</h5>
+        <p class="card-text">1 vài thông tin</p>
+        <a href="#" class="btn btn-primary">Xem chi tiết</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Supported by -->
+<div class="container-fluid pt-2">
+  <div class="row text-center border-3 p-2 m-2">
+    <div class="col-12 p-2">
+      <h2 style="color: rgb(231, 174, 17); font-weight: 700">
+        Sponsored by
+      </h2>
+    </div>
+    <div class="col-md-6 col-xs-12">
+      <img
+        style="border-radius: 6px"
+        src="./image/see-star.webp"
+        class="img-fluid"
+        alt="reading-book"
+      />
+    </div>
+    <div class="col-md-6 col-xs-12 d-flex flex-column justify-content-center">
+      <h1 style="color: rgb(0, 85, 128)">Famous in Vietnam</h1>
+      <h2>
+        <i><img
+            src="./image/shoppe.webp"
+            width="70"
+            class="img-fluid"
+            alt="shoppe"
+          /></i>
+        Shoppe
+      </h2>
+      <h2>
+        <i><img
+            src="./image/lazada.webp"
+            width="70"
+            class="img-fluid"
+            alt="lazada"
+          /></i>
+        Lazada
+      </h2>
+      <h2>
+        <i><img
+            src="./image/tiki4.webp"
+            width="70"
+            class="img-fluid"
+            alt="shoppe"
+          /></i>
+        <span class="mr-4"></span>
+        Tiki
+      </h2>
+    </div>
+  </div>
+</div>
