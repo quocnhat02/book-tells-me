@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --exec ./node_modules/.bin/babel-node ./src/server.js",
+    "start": "nodemon --inspect --exec ./node_modules/.bin/babel-node ./src/server.js",
     "beautiful": "node-sass --watch ./src/scss/style.scss ./src/public/css/style.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

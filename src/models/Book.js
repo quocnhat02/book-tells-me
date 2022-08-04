@@ -7,9 +7,9 @@ const bookSchema = new Schema({
   description: { type: String, maxLength: 600 },
   image: { type: String, maxLength: 255 },
   urlDownload: { type: String, maxLength: 255 },
-  admins: { type: Schema.Types.ObjectId, ref: "Admins" },
-  genres: { type: Schema.Types.ObjectId, ref: "Genres" },
-  author: { type: Schema.Types.ObjectId, ref: "Authors" },
+  // admins: { type: Schema.Types.ObjectId, ref: "Admins" },
+  genres: { type: String, maxLength: 100 },
+  author: { type: String, maxLength: 100 },
 });
 
 module.exports = mongoose.model("Books", bookSchema);

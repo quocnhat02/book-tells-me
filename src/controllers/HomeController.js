@@ -7,7 +7,7 @@ class HomeController {
     Book.find({})
       .then((books) => {
         books = multipleMongooseToObject(books);
-        res.render("genres", { books });
+        res.render("home", { books });
       })
       .catch((err) => console.log(err));
   }
