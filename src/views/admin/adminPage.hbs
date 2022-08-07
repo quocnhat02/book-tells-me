@@ -9,15 +9,34 @@
         class="image-collapse"
       />
     </div>
-
-    <div class="col-12 p-3 d-flex justify-content-around align-items-center">
-      <a href="/admin" style="color: red;"><b>Sửa sách</b></a>
+    {{! <div class="col-12 p-3 d-flex justify-content-around align-items-center">
+      <a href="/edit" style="color: red;"><b>Sửa sách</b></a>
       <img
         src="./image/update-book.gif"
         width="300"
         alt="update-book"
         class="image-collapse"
       />
-    </div>
+    </div> }}
+    {{#each books}}
+      <div class="card card-body mb-2 text-center">
+        <p><img src="{{this.image}}" alt="{{this.nameBook}}" width="200" /></p>
+        <h4>{{this.nameBook}}</h4>
+        <a
+          href="/admin/edit/{{this._id}}"
+          class="btn btn-dark btn-block mb-2"
+        >Sửa</a>
+        <form action="/admin/{{_id}}?_method=DELETE" method="post">
+          <input type="hidden" name="_method" value="DELETE" />
+          <input
+            type="submit"
+            class="btn btn-danger btn-block"
+            value="Xóa"
+            name=""
+            id=""
+          />
+        </form>
+      </div>
+    {{/each}}
   </div>
 </div>

@@ -1,7 +1,7 @@
 <div class="card card-body">
   <h3>Thêm sách</h3>
 
-  <form method="POST" action="/store">
+  <form method="POST" action="/admin">
     <div class="form-row">
       <div class="form-group col-md-6">
         <label for="inputName">Tên Sách:</label>
@@ -74,7 +74,19 @@
           id="inputAuthor"
           name="author"
           required
-          value="{{nameAuthor}}"
+          value="{{author}}"
+        />
+      </div>
+
+      <div class="form-group col-md-6">
+        <label for="inputSlug">Slug:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputSlug"
+          name="slug"
+          required
+          value="{{slug}}"
         />
       </div>
     </div>

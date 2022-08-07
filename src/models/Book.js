@@ -10,6 +10,7 @@ const bookSchema = new Schema({
   // admins: { type: Schema.Types.ObjectId, ref: "Admins" },
   genres: { type: String, maxLength: 100 },
   author: { type: String, maxLength: 100 },
+  slug: { type: String, maxLength: 100 },
 });
 
 module.exports = mongoose.model("Books", bookSchema);

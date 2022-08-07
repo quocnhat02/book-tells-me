@@ -1,25 +1,20 @@
 <div class="container">
   <div class="row">
-    <div
-      class="col-12 p-3 mt-3 border-3"
-      style="background-color: #00a9da;"
-    >{{this.genres}}</div>
-    <div class="col-12 p-3 mt-3 border-3">
-      {{#each books}}
-        <div class="card p-2" style="width: 14rem">
-          <img
-            class="card-img-top"
-            src="{{this.image}}"
-            alt="{{this.nameBook}}"
-          />
-          <div class="card-body">
-            <h5 class="card-title">{{this.nameBook}}</h5>
-            <p class="card-text">{{this.genres}}</p>
-            <a href="#" class="btn btn-primary">Xem chi tiết</a>
-          </div>
+
+    {{#each books}}
+      <div class="card p-2 m-2" style="width: 14rem">
+        <img
+          class="card-img-top"
+          src="{{this.image}}"
+          alt="{{this.nameBook}}"
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{this.nameBook}}</h5>
+          <p class="card-text">Genres:{{this.genres}}</p>
+          <a href="{{this.urlDownload}}" class="btn btn-primary">Xem chi tiết</a>
         </div>
-      {{/each}}
-    </div>
+      </div>
+    {{/each}}
 
   </div>
 </div>
