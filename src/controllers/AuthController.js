@@ -131,7 +131,13 @@ const authController = {
     refreshTokens = refreshTokens.filter(
       (token) => token !== req.cookies.refreshToken
     );
-    return res.status(200).json("logged out !");
+    // return res.status(200).json("logged out !");
+    Book.find({})
+      .then((books) => {
+        books = multipleMongooseToObject(books);
+        return res.render("home", { books });
+      })
+      .catch((err) => console.log(err));
   },
 };
 
