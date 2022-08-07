@@ -5,7 +5,9 @@ import authRouter from "./auth";
 import middlewareController from "../controllers/MiddlewareController";
 
 let initHomeRoutes = (app) => {
-  app.use("/v1/auth", authRouter);
+  app.use("/", authRouter);
+  app.get("/login", homeController.login);
+  app.get("/register", homeController.register);
 
   // admin
   app.delete("/admin/:id", adminRouter.delete);

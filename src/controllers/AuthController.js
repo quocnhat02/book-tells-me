@@ -1,14 +1,20 @@
 import Account from "../models/Account";
+import Book from "../models/Book";
 import { multipleMongooseToObject } from "../util/mongoose";
 import bcrypt from "bcrypt";
 import "dotenv/config";
 import JWT from "jsonwebtoken";
+import { render } from "node-sass";
 
 let refreshTokens = [];
 
 const authController = {
   register: async (req, res, next) => {
     try {
+      const findUser = await Account.findOne({ email: req.body.email });
+      if (findUser) {
+        return res.json("Account is ready");
+      }
       const salt = await bcrypt.genSalt(10);
       const hashed = await bcrypt.hash(req.body.password, salt);
 
@@ -20,7 +26,7 @@ const authController = {
 
       // save to DB
       const user = await newUser.save();
-      res.status(200).json(user);
+      return res.status(200).render("login");
     } catch (error) {
       res.status(500).json(err);
     }
@@ -78,7 +84,14 @@ const authController = {
 
         const { password, ...others } = user._doc;
 
-        return res.status(200).json({ ...others, accessToken });
+        // return res.status(200).json({ ...others, accessToken });
+        // return res.redirect("home");
+        Book.find({})
+          .then((books) => {
+            books = multipleMongooseToObject(books);
+            return res.render("home", { books });
+          })
+          .catch((err) => console.log(err));
       }
     } catch (err) {
       return res.status(500).json(err);

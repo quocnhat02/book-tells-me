@@ -8,13 +8,13 @@ const middlewareController = {
       const accessToken = token.split(" ")[1];
       Jwt.verify(accessToken, process.env.JWT_ACCESS_KEY, (err, user) => {
         if (err) {
-          res.status(403).json("token is not valid");
+          return res.status(403).json("token is not valid");
         }
         req.user = user;
         next();
       });
     } else {
-      res.status(401).json("you're not authentication");
+      return res.status(401).json("you're not authentication");
     }
   },
 
@@ -23,7 +23,7 @@ const middlewareController = {
       if (req.user.id == req.user.admin) {
         next();
       } else {
-        res.status(401).json("You are not allow");
+        return res.status(401).json("You are not allow");
       }
     });
   },
