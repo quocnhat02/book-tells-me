@@ -12,6 +12,10 @@ class HomeController {
       .catch((err) => console.log(err));
   }
 
+  about(req, res, next) {
+    res.render("about");
+  }
+
   login(req, res, next) {
     res.render("login");
   }
