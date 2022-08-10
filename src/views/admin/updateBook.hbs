@@ -1,0 +1,100 @@
+{{#each books}}
+  <div class="card card-body">
+    <h3>Sửa sách</h3>
+    <form method="POST" action="/admin/{{this._id}}?_method=PUT">
+      <input type="hidden" name="_method" value="PUT" />
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputName">Tên Sách:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="inputName"
+            placeholder="tên sách"
+            name="nameBook"
+            required
+            value="{{this.nameBook}}"
+          />
+        </div>
+
+      </div>
+      <div class="form-group">
+        <label for="inputAddress">Mô tả:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputAddress"
+          placeholder="mô tả sách"
+          name="description"
+          required
+          value="{{this.description}}"
+        />
+      </div>
+      <div class="form-group">
+        <label for="inputAddress2">Url download:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputAddress2"
+          placeholder="https://..."
+          name="urlDownload"
+          required
+          value="{{this.urlDownload}}"
+        />
+      </div>
+      <div class="form-group">
+        <label for="inputAddress2">Url Image:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputAddress2"
+          placeholder="https://..."
+          name="image"
+          required
+          value="{{this.image}}"
+        />
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputCity">Thể loại:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="inputCity"
+            name="genres"
+            required
+            value="{{this.genres}}"
+          />
+        </div>
+
+        <div class="form-group col-md-6">
+          <label for="inputAuthor">Tác giả:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="inputAuthor"
+            name="author"
+            required
+            value="{{this.author}}"
+          />
+        </div>
+
+        <div class="form-group col-md-6">
+          <label for="inputSlug">Slug:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="inputSlug"
+            name="slug"
+            required
+            value="{{this.slug}}"
+          />
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Thay đổi Sách</button>
+    </form>
+  </div>
+{{else}}
+  <h3>Chưa có dữ liệu</h3>
+{{/each}}

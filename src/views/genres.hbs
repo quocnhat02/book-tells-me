@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+
+    {{#each books}}
+      <div class="card p-2 m-2" style="width: 14rem">
+        <img
+          class="card-img-top"
+          src="{{this.image}}"
+          alt="{{this.nameBook}}"
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{this.nameBook}}</h5>
+          <p class="card-text">Genres:{{this.genres}}</p>
+          {{!-- <form action="/{{this.nameBook}}">
+            <input type="submit" class="btn btn-primary" value="Xem chi tiết" />
+
+          </form> --}}
+          <a
+            href="/{{this.genres}}/{{this.nameBook}}"
+            class="btn btn-primary"
+          >Xem chi tiết</a>
+        </div>
+      </div>
+    {{else}}
+      <div style="height: 600px;">
+        <h3>Không có book</h3>
+      </div>
+    {{/each}}
+
+  </div>
+</div>
